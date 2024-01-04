@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <title>Form</title>
+</head>
+<body>
+    
+<div class="container">
+    <h2 class="my-2">Form & Validation</h2>
+    <form action="#" novalidate class="need-validation">
+        <div class="my-2">
+            <label for="username"class="my-1" >Username</label>
+            <input type="text" id="username" class="form-control" required>
+            <div class="valid-feedback">Fine</div>
+            <div class="invalid-feedback">Correct it!</div>
+        </div>
+        <div class="my-2">
+            <label for="Email" class="my-1">Email</label>
+            <input type="email" id="email" class="form-control" required>
+            <div class="valid-feedback">Fine</div>
+            <div class="invalid-feedback">Correct it!</div>
+        </div>
+        <div class="my-2">
+            <label for="password" class="my-1">Password</label>
+            <input type="password" id="password" class="form-control" required>
+            <div class="valid-feedback">Fine</div>
+            <div class="invalid-feedback">Correct it!</div>
+        </div>
+        <div >
+            <input type="checkbox" id="invalid-check"  class="form-check-input" required>
+            <label for="invalid-check" class="form-check-label">Agree Terms and Conditions</label>
+        </div>
+        <div class="my-3">
+            <input type="submit" value="submit" class="btn btn-primary">
+        </div>
+    </form>
+</div>
+    <script>
+        const form=document.querySelector(".need-validation");
+        form.addEventListener('submit',(e)=>{
+            if(!form.checkValidity()){
+                e.preventDefault();
+            }else{
+                alert("success");
+            }
+            form.classList.add("was-validated");
+        })
+    </script>
+
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
